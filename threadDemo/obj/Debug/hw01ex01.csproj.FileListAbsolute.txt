@@ -1,0 +1,13 @@
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\obj\Debug\hw01ex01.csprojAssemblyReference.cache
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\obj\Debug\hw01ex01.csproj.CoreCompileInputs.cache
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\bin\Debug\hw01ex01.exe.config
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\bin\Debug\hw01ex01.exe
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\bin\Debug\hw01ex01.pdb
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\obj\Debug\hw01ex01.exe
+Z:\CS-371-1\HW01\hw01ex01\hw01ex01\obj\Debug\hw01ex01.pdb
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\bin\Debug\hw01ex01.exe.config
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\bin\Debug\hw01ex01.exe
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\bin\Debug\hw01ex01.pdb
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\obj\Debug\hw01ex01.csprojAssemblyReference.cache
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\obj\Debug\hw01ex01.exe
+F:\Source\cs371\threadsDemo\hw01ex01\hw01ex01\obj\Debug\hw01ex01.pdb
