@@ -8,16 +8,6 @@ using System.Threading.Tasks;
 namespace hw01ex01
 {
     public class Music {
-        public void MarchThreaded()
-        {
-            Thread Th = new Thread(new ThreadStart(this.PlayImperialMarch));
-            Th.Start();
-        }
-
-        public async void MarchAsync() {
-            this.PlayImperialMarch();
-        }
-
         public void March()
         {
             this.PlayImperialMarch();
@@ -85,7 +75,7 @@ namespace hw01ex01
             ConsoleColor OldFgColor = Console.ForegroundColor;
             if (Age < 18) {
                 Music music = new Music();
-                Task.Run(() => music.March());
+                music.March();
                 Console.ForegroundColor = ConsoleColor.Red;
                 System.Windows.Forms.MessageBox.Show("Danger " + Handle + "! Danger!", "Underage user.");
                 Console.WriteLine("I am sorry, {0}. You are not authorized to proceed.", Handle);
@@ -99,10 +89,6 @@ namespace hw01ex01
             Console.WriteLine("Press any key to terminate...");
             Console.ReadLine();
 
-        }
-
-        public static async void PlayAsync(Music music) {
-            await Task.Run(music.March);
         }
     }
 }
