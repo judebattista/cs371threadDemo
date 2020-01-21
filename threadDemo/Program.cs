@@ -8,7 +8,21 @@ using System.Threading.Tasks;
 namespace hw01ex01
 {
     public class Music {
-        public void PlayImperialMarch() {
+        public void MarchThreaded()
+        {
+            Thread Th = new Thread(new ThreadStart(this.PlayImperialMarch));
+            Th.Start();
+        }
+
+        public async void MarchAsync() {
+            this.PlayImperialMarch();
+        }
+
+        public void March()
+        {
+            this.PlayImperialMarch();
+        }
+        private void PlayImperialMarch() {
             /*
              * Imperial March translated by Y.Y. Bizyanov at http://llrprt.blogspot.com/2013/11/programming-imperial-march.html
              */
@@ -68,20 +82,18 @@ namespace hw01ex01
             int Age;
             bool validAge = Int32.TryParse(Console.ReadLine(), out Age);
             Console.WriteLine();
-            //ConsoleColor OldBgColor = Console.BackgroundColor;
             ConsoleColor OldFgColor = Console.ForegroundColor;
             if (Age < 18) {
-                //Console.BackgroundColor = ConsoleColor.Red;
+                Music music = new Music();
+                Task.Run(() => music.March());
                 Console.ForegroundColor = ConsoleColor.Red;
                 System.Windows.Forms.MessageBox.Show("Danger " + Handle + "! Danger!", "Underage user.");
                 Console.WriteLine("I am sorry, {0}. You are not authorized to proceed.", Handle);
             }
             else {
-                //Console.BackgroundColor = ConsoleColor.Yellow;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome {0}. You are cleared to proceed. Apparently we live in a gerentocracy now.", Handle);
             }
-            //Console.BackgroundColor = OldBgColor;
             Console.ForegroundColor = OldFgColor;
             // Wait for the user to press enter to terminate
             Console.WriteLine("Press any key to terminate...");
@@ -89,15 +101,8 @@ namespace hw01ex01
 
         }
 
-        public void playAsync() {
-            Music March = new Music();
-            Thread Th = new Thread(new ThreadStart(March.PlayImperialMarch));
-            Th.Start();
-        }
-
-        public void PlaySynch() {
-            Music March = new Music();
-            March.PlayImperialMarch();
+        public static async void PlayAsync(Music music) {
+            await Task.Run(music.March);
         }
     }
 }
